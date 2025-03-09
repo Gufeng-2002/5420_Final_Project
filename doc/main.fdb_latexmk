@@ -1,7 +1,7 @@
 # Fdb version 4
-["pdflatex"] 1741487849.91945 "/Users/gufeng/2025_winter/DASC_5420/final_project/doc/main.tex" "main.pdf" "main" 1741487850.94122 0
+["pdflatex"] 1741497494.29673 "/Users/gufeng/2025_winter/DASC_5420/Final_Project_5420/doc/main.tex" "main.pdf" "main" 1741497495.04983 0
+  "/Users/gufeng/2025_winter/DASC_5420/Final_Project_5420/doc/main.tex" 1741497492.66356 892 160070ceb6e29164265e03f8516430c1 ""
   "/Users/gufeng/2025_winter/DASC_5420/assignments/Assignment1/images/question_5_g.png" 1739251678.28802 186307 658fe1a5910d04e5be3c287d9bce35e6 ""
-  "/Users/gufeng/2025_winter/DASC_5420/final_project/doc/main.tex" 1741487849.64854 626 174124100ea9136acdbff60ab223e15c ""
   "/Users/gufeng/Library/TinyTeX/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/Users/gufeng/Library/TinyTeX/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
   "/Users/gufeng/Library/TinyTeX/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm" 1136768653 1324 c910af8c371558dc20f2d7822f66fe64 ""
@@ -93,9 +93,9 @@
   "/Users/gufeng/Library/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1738446331 127968 72a9e0623c977cfe76762c46230e27ef ""
   "/Users/gufeng/Library/TinyTeX/texmf-var/web2c/pdftex/pdflatex.fmt" 1738446154 1928539 3ea1732a7e3f60ad79c7a5d0834cf1ff ""
   "/Users/gufeng/Library/TinyTeX/texmf.cnf" 1738446073.99775 708 85fd07691b6294ba94c59dbc62380410 ""
-  "main.aux" 1741487850.82875 660 b9fa8e94e7228404ab7fbe8d133a9b42 "pdflatex"
-  "main.out" 1741487850.82941 91 64fadbf6bead1755a238a747e93e6861 "pdflatex"
-  "main.tex" 1741487849.64854 626 174124100ea9136acdbff60ab223e15c ""
+  "main.aux" 1741497495.00372 857 b674156442a9bc2fa60b52290cfe7f0d "pdflatex"
+  "main.out" 1741497495.00427 91 64fadbf6bead1755a238a747e93e6861 "pdflatex"
+  "main.tex" 1741497492.66356 892 160070ceb6e29164265e03f8516430c1 ""
   "reference.tex" 1741069560.45791 352 1127d10006c7366ecdbdc6dac2e99b38 ""
   "settings/mycommands.tex" 1741070473.84562 191 acab76b4031e7b4db58f4c067b9a8d05 ""
   "settings/packages.tex" 1733106878.94181 999 c96a3d7a59c4930ddfc9fe47b6a254fd ""

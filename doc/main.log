@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.1)  8 MAR 2025 18:37
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.1)  8 MAR 2025 21:18
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/Users/gufeng/2025_winter/DASC_5420/final_project/doc/main.tex
-(/Users/gufeng/2025_winter/DASC_5420/final_project/doc/main.tex
+**/Users/gufeng/2025_winter/DASC_5420/Final_Project_5420/doc/main.tex
+(/Users/gufeng/2025_winter/DASC_5420/Final_Project_5420/doc/main.tex
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
 (/Users/gufeng/Library/TinyTeX/texmf-dist/tex/latex/base/article.cls
@@ -437,11 +437,17 @@ Package pdftex.def Info: /Users/gufeng/2025_winter/DASC_5420/assignments/Assignm
 (pdftex.def)             Requested size: 387.00153pt x 161.24962pt.
 
 
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+
 [1
 
-{/Users/gufeng/Library/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map} </Users/gufeng/2025_winter/DASC_5420/assignments/Assignment1/images/question_5_g.png>] (./reference.tex)
+{/Users/gufeng/Library/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map} </Users/gufeng/2025_winter/DASC_5420/assignments/Assignment1/images/question_5_g.png>]
 
-[2
+[2] (./reference.tex)
+
+[3
 
 ] (./main.aux)
  ***********
@@ -452,18 +458,18 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 64FADBF6BEAD1755A238A747E93E6861;91.
  ) 
 Here is how much of TeX's memory you used:
- 13106 strings out of 475172
- 216385 string characters out of 5765190
- 712264 words of memory out of 5000000
- 35934 multiletter control sequences out of 15000+600000
+ 13113 strings out of 475172
+ 216525 string characters out of 5765190
+ 713306 words of memory out of 5000000
+ 35939 multiletter control sequences out of 15000+600000
  565646 words of font info for 60 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 84i,6n,96p,348b,456s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,8n,96p,353b,456s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </Users/gufeng/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></Users/gufeng/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></Users/gufeng/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></Users/gufeng/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></Users/gufeng/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></Users/gufeng/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></Users/gufeng/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on main.pdf (2 pages, 249745 bytes).
+Output written on main.pdf (3 pages, 251123 bytes).
 PDF statistics:
- 67 PDF objects out of 1000 (max. 8388607)
- 46 compressed objects within 1 object stream
- 7 named destinations out of 1000 (max. 500000)
+ 72 PDF objects out of 1000 (max. 8388607)
+ 50 compressed objects within 1 object stream
+ 9 named destinations out of 1000 (max. 500000)
  14 words of extra memory for PDF output out of 10000 (max. 10000000)
 

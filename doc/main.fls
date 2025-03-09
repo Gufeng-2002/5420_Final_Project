@@ -1,8 +1,8 @@
-PWD /Users/gufeng/2025_winter/DASC_5420/final_project/doc
+PWD /Users/gufeng/2025_winter/DASC_5420/Final_Project_5420/doc
 INPUT /Users/gufeng/Library/TinyTeX/texmf.cnf
 INPUT /Users/gufeng/Library/TinyTeX/texmf-dist/web2c/texmf.cnf
 INPUT /Users/gufeng/Library/TinyTeX/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT /Users/gufeng/2025_winter/DASC_5420/final_project/doc/main.tex
+INPUT /Users/gufeng/2025_winter/DASC_5420/Final_Project_5420/doc/main.tex
 OUTPUT main.log
 INPUT /Users/gufeng/Library/TinyTeX/texmf-dist/tex/latex/base/article.cls
 INPUT /Users/gufeng/Library/TinyTeX/texmf-dist/tex/latex/base/article.cls
