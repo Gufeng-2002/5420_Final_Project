@@ -1,0 +1,11 @@
+
+\newenvironment{myfigure}[3] % width, path, caption
+{
+    \begin{figure}[htbp]
+        \centering
+        \includegraphics[width=#1\textwidth]{#2}
+        \caption{#3}
+}
+{
+    \end{figure}
+}
