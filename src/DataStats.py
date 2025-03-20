@@ -91,3 +91,74 @@ def numerical_correlation(data):
     return raw_corr_matrix.style.applymap(
         lambda val: highlight_threshold(val)
     )
+
+# split the orginal data into train and test data sets
+def split_train_test(raw_data, frac = 0.8, store_path = "../data"):
+    """Split the raw data into train and test sets randomly and store them 
+    in the data directory.
+
+    Args:
+        rawdata (_type_): a pandas data frame
+    """
+    raw_data_train = raw_data.sample(frac=frac, random_state=42)
+    raw_data_test = raw_data.drop(raw_data_train.index)
+    
+    store_path = store_path
+    raw_data_train.to_csv(store_path + f"/raw_data_train.csv")
+    raw_data_test.to_csv(store_path + f"/raw_data_test.csv")
+    
+    print(f"The test and train data sets are stored into path: {store_path}")
+    # check the results
+    print(f"The train data set has {raw_data_train.shape[0]} rows and {raw_data_train.shape[1]} columns")
+    print(f"The test data set has {raw_data_test.shape[0]} rows and {raw_data_test.shape[1]} columns")
+    print(f"The original data set has {raw_data.shape[0]} rows and {raw_data.shape[1]} columns")
+    
+    return None
+
+def cols_categorize(data):
+    """Fetch the column names for different data types: numerical and categorical
+
+    Args:
+        dataframe (_type_): a data frame
+        
+    Returns:       
+        numerical_cols (_type_): a list of numerical column names
+        categorical_cols (_type_): a list of categorical column names
+    """
+    numerical_cols = data.select_dtypes(include=["int64", "float64"]).columns.tolist()
+    categorical_cols = data.select_dtypes(include=["object"]).columns.tolist()
+    
+    categorical_cols = [col for col in categorical_cols if data[col].nunique() < 50]  # Adjust threshold
+    
+    print("Numerical Columns:\n", '; '.join(numerical_cols))
+    print("Categorical Columns:\n", '; '.join(categorical_cols))
+    
+    return numerical_cols, categorical_cols
+
+# the mapping relations for the three categorical variables that need simple encoding
+income_mapping = {
+    'under $11k': 1,
+    '$11-$25k': 2,
+    "$25-$50k": 3,
+    ">$50k": 4
+}
+
+dnr_mapping = {
+    'no dnr': 1,
+    'dnr after sadm': 2,
+    'dnr before sadm': 3   
+}
+
+sfdm2_mapping = {
+    "no(M2 and SIP pres)": 1,
+    "adl>=4 (>=5 if sur)": 2,
+    "SIP>=30": 3,
+    "Coma or Intub": 4,
+    "<2 mo. follow-up": 5
+}
+
+cat_sim_mappings = {
+    'income': income_mapping,
+    'dnr': dnr_mapping,
+    'sfdm2': sfdm2_mapping
+}
