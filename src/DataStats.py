@@ -162,3 +162,5 @@ cat_sim_mappings = {
     'dnr': dnr_mapping,
     'sfdm2': sfdm2_mapping
 }
+
+
