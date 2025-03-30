@@ -93,7 +93,7 @@ def numerical_correlation(data):
     )
 
 # split the orginal data into train and test data sets
-def split_train_test(raw_data, frac = 0.8, store_path = "../data"):
+def split_train_test(raw_data, frac = 0.8, store_path = "../data", if_store = False):
     """Split the raw data into train and test sets randomly and store them 
     in the data directory.
 
@@ -104,18 +104,24 @@ def split_train_test(raw_data, frac = 0.8, store_path = "../data"):
     raw_data_test = raw_data.drop(raw_data_train.index)
     
     store_path = store_path
-    raw_data_train.to_csv(store_path + f"/raw_data_train.csv")
-    raw_data_test.to_csv(store_path + f"/raw_data_test.csv")
     
-    print(f"The test and train data sets are stored into path: {store_path}")
-    # check the results
-    print(f"The train data set has {raw_data_train.shape[0]} rows and {raw_data_train.shape[1]} columns")
-    print(f"The test data set has {raw_data_test.shape[0]} rows and {raw_data_test.shape[1]} columns")
-    print(f"The original data set has {raw_data.shape[0]} rows and {raw_data.shape[1]} columns")
+    if if_store == True:
+        raw_data_train.to_csv(store_path + f"/raw_data_train.csv")
+        raw_data_test.to_csv(store_path + f"/raw_data_test.csv")
+        
+        print(f"The test and train data sets are stored into path: {store_path}")
+        # check the results
+        print(f"The train data set has {raw_data_train.shape[0]} rows and {raw_data_train.shape[1]} columns")
+        print(f"The test data set has {raw_data_test.shape[0]} rows and {raw_data_test.shape[1]} columns")
+        print(f"The original data set has {raw_data.shape[0]} rows and {raw_data.shape[1]} columns")
+        
+    else:
+        print(f"The train data set has {raw_data_train.shape[0]} rows and {raw_data_train.shape[1]} columns")
+        print("The data sets are not stored")
     
     return None
 
-def cols_categorize(data):
+def cols_categorize(data, if_print_names = False):
     """Fetch the column names for different data types: numerical and categorical
 
     Args:
@@ -130,8 +136,10 @@ def cols_categorize(data):
     
     categorical_cols = [col for col in categorical_cols if data[col].nunique() < 50]  # Adjust threshold
     
-    print("Numerical Columns:\n", '; '.join(numerical_cols))
-    print("Categorical Columns:\n", '; '.join(categorical_cols))
+    if if_print_names:
+        
+        print("Numerical Columns:\n", '; '.join(numerical_cols))
+        print("Categorical Columns:\n", '; '.join(categorical_cols))
     
     return numerical_cols, categorical_cols
 
@@ -140,13 +148,15 @@ income_mapping = {
     'under $11k': 1,
     '$11-$25k': 2,
     "$25-$50k": 3,
-    ">$50k": 4
+    ">$50k": 4,
+    "unknown": 0
 }
 
 dnr_mapping = {
     'no dnr': 1,
     'dnr after sadm': 2,
-    'dnr before sadm': 3   
+    'dnr before sadm': 3,
+    "unknown": 0 
 }
 
 sfdm2_mapping = {
@@ -154,7 +164,8 @@ sfdm2_mapping = {
     "adl>=4 (>=5 if sur)": 2,
     "SIP>=30": 3,
     "Coma or Intub": 4,
-    "<2 mo. follow-up": 5
+    "<2 mo. follow-up": 5,
+    "unknown": 0
 }
 
 cat_sim_mappings = {
@@ -162,5 +173,3 @@ cat_sim_mappings = {
     'dnr': dnr_mapping,
     'sfdm2': sfdm2_mapping
 }
-
-
