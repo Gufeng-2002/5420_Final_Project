@@ -1,0 +1,73 @@
+\begin{frame}
+    \frametitle{Model Fitting}
+    \begin{itemize}
+        \item Model selection and design
+        \item Details in logistic regression
+        \item etc
+    \end{itemize}
+
+    \end{frame}
+
+% Selected models 
+\begin{frame}
+    \frametitle{Selected Models}
+    \begin{itemize}
+        \item \textbf{Logistic Regression}: Designed custom algorithms to fit the log-odds regression from scratch.
+        \item \textbf{K-Nearest Neighbors (KNN)}: Utilized grid-search to determine the optimal value of \( K \).
+        \item \textbf{Random Forest}: Applied ensemble methods to improve prediction accuracy and interpretability.
+    \end{itemize}
+\end{frame}
+
+
+% Logistic Regression
+\begin{frame}
+    \frametitle{Customized Logistic Regression}
+    \begin{itemize}
+        \item Logistic regression models the probability of a binary outcome using the log-odds (logit) function:
+        \[
+        \text{logit}(p) = \log\left(\frac{p}{1-p}\right) = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \cdots + \beta_n x_n
+        \]
+        where \( p \) is the probability of the positive class, and \( x_1, x_2, \ldots, x_n \) are the input features.
+        \item The model parameters (\( \beta_0, \beta_1, \ldots, \beta_n \)) are estimated by maximizing the likelihood function.
+        \item In this project, we designed custom algorithms to solve the logistic regression problem from scratch, focusing on optimizing the log-likelihood function.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Logistic Regression: Model Fitting}
+    \begin{itemize}
+        \item TO DO.
+    \end{itemize}
+\end{frame}
+
+% Random Forest on different data sets
+\begin{frame}
+
+    In Random Forest, key hyperparameters such as \textit{n\_estimators}, \textit{max\_features}, \textit{max\_depth}, \textit{max\_leaf\_nodes}, and \textit{min\_samples\_leaf} need tuning to optimize model performance. 
+    We used grid search with cross-validation to explore combinations. Parameters were tested over selected ranges (e.g., \textit{n\_estimators} $\in$ \{50, 100, 200, 300, 500, 1000\}, \textit{max\_features} $\in$ \{1, 2, 5, 10\}, etc.). 
+    The table below shows the best settings for each dataset based on validation accuracy. 
+    Results indicate that different balancing strategies affect the ideal model complexity and tree structure.    
+
+    \frametitle{Best Hyperparameters of RF upon different datasets}
+    \begin{table}[ht]
+        \centering
+        \resizebox{\textwidth}{!}{%
+        \begin{tabular}{|l|c|c|c|c|c|}
+        \hline
+        \textbf{Dataset} & \textbf{n\_estimators} & \textbf{max\_features} & \textbf{max\_depth} & \textbf{max\_leaf\_nodes} & \textbf{min\_samples\_split} \\
+        \hline
+        Raw & 50 & 4 & 15 & None (Unlimited) & 5 \\
+        \hline
+        Random Oversampling & 100 & 1 & 30 & None (Unlimited) & 1 \\
+        \hline
+        SMOTE-balancing & 100 & 1 & 30 & None & 1 \\
+        \hline
+        Advanced-balancing & 300 & 3 & 10 & None (Unlimited) & 1 \\
+        \hline
+        \multicolumn{6}{c}{\large  \textcolor{blue}{\textbf{Table: }}
+         Optimal Hyperparameter Combinations for Random Forest Across Datasets}
+        \end{tabular}%
+        }
+        \label{tab:rf-hyperparameters}
+    \end{table}
+\end{frame}

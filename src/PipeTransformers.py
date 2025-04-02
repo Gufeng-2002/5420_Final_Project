@@ -32,7 +32,15 @@ class CustomFunctionTransformer(FunctionTransformer):
 # prepare a sample data set
 data = pd.read_csv('../data/original_data.csv').drop('Unnamed: 0', axis=1)
 data = data[:100]
+
+# split numerical and categorical columns
 num_cols, cat_cols = DataStats.cols_categorize(data)
+
+# split the numerical columns into two subsets
+num_cols.remove('diabetes')
+num_cols.remove('dementia')
+# 'diabetes' and 'dementia' are categorical variables but in numerical format
+num_boolean_cols = ['diabetes', 'dementia']
 
 # some categorical columns should be encoded by simple encoding, not one-hot encoding
 cat_sim_cols = ['income', 'dnr', 'sfdm2'] # need to be encoded by simple encoding
@@ -92,6 +100,10 @@ def create_imputer_encoder_pipelines():
     ])
 
     num_imputers = [num_imputer_1, num_imputer_2, num_imputer_3, num_imputer_4]
+    
+    num_boolean_imputer = Pipeline([
+    ("imputer_boolean", SimpleImputer(strategy="median"))  # Replace NaN with False
+    ])
 
     # different categorical imputing methods with one-hot encoding
     cat_oh_imputer_1 = Pipeline([
@@ -143,6 +155,7 @@ def create_imputer_encoder_pipelines():
     imputer_encoders = [
         ColumnTransformer(
             [("num_imputer", num_imputer, num_cols),
+             ("num_boolean_imputer", num_boolean_imputer, num_boolean_cols),
             ("cat_on_imputer", cat_oh_imputer, cat_oh_cols),
             ("cat_sim_imputer", cat_sim_imputer, cat_sim_cols),
             ("cat_oh_encoder", cat_oh_encoder, cat_oh_cols),
@@ -202,3 +215,11 @@ def imputer_encoder_transform(imputer_encoder, data):
         
     # return the transformed data
     return transformed_data
+
+
+# TO DO - Add Janne's code here:
+# Put the Lasso selection function here
+# Put the feature importance visualization function here
+
+# TO DO - Add YaZhe's code here:
+
