@@ -1,0 +1,203 @@
+\section{Feature engineering for handling class imbalance}
+
+
+Class imbalance in classification tasks can be addressed partially through feature engineering
+techniques that modify the dataset to improve model performance on minority classes. 
+Below, we explore three methods: Random Oversampling, SMOTE, and Augmented SMOTE.
+
+\begin{itemize}
+    \item \textbf{Random Oversampling:} 
+    
+    Random Oversampling duplicates minority class samples to balance class sizes with the majority class.
+     While this method is computationally efficient, it may lead to overfitting due to repeated samples.
+
+    \item \textbf{Synthetic Minority Oversampling Technique (SMOTE):} 
+    
+    SMOTE generates synthetic samples for minority 
+    classes by interpolating between existing samples and their nearest neighbors.
+    This approach ensures a more diverse dataset and reduces overfitting compared to simple oversampling.
+
+    \item \textbf{Augmented SMOTE with PCA:} 
+    
+    Augmented SMOTE combines SMOTE with dimensionality reduction techniques like PCA to avoid over-synthesis in high-dimensional spaces. 
+    By reducing the data to a lower-dimensional representation before applying SMOTE. 
+    
+    This method ensures meaningful interpolation and avoids overfitting. 
+    Additionally, random undersampling of majority classes can be applied to further balance the dataset.
+\end{itemize}
+
+\subsection{Class Imbalance Mitigation}
+
+From the exploratory data analysis (EDA), it became evident that the target variable (sfdm2) exhibits a pronounced class imbalance. 
+The majority of observations belong to Class 1 and Class 5, while Class 4 accounts for less than 0.5\% of the total data. 
+Such a skewed distribution can significantly hinder a model's ability to learn meaningful patterns associated with minority classes, 
+often resulting in poor generaliza-tion on these underrepresented groups. To evaluate the impact of this imbalance, we trained a baseline
+Random Forest model using the original (imbalanced) training data without applying any resampling or class weighting strategies, 
+and then assessed its performance on the test set.
+The results of this baseline model are summarized below
+
+
+\begin{table}[!h]
+\centering
+\caption{Classification Report (upon original Imbalanced Data)}
+\label{tab:rf_imbalanced}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\textbf{Class} & \textbf{Precision} & \textbf{Recall} & \textbf{F1-score} & \textbf{Support} \\
+\hline
+1 & 0.69 & 0.86 & 0.77 & 612 \\
+2 & 0.53 & 0.29 & 0.37 & 183 \\
+3 & 0.20 & 0.01 & 0.02 & 113 \\
+4 & 0.00 & 0.00 & 0.00 & 8 \\
+5 & 0.77 & 0.83 & 0.80 & 625 \\
+\hline
+\textbf{Accuracy} & \multicolumn{2}{|c|}{--} & 0.71 & 1541 \\
+\hline
+\textbf{Macro Avg} & 0.44 & 0.40 & 0.39 &  1541\\
+\textbf{Weighted Avg} & 0.66 & 0.71 & 0.67 & 1541 \\
+\hline
+\end{tabular}
+\end{table}
+
+Although the overall accuracy reached 71\%, a closer examination reveals the model's inability to recognize minority classes.
+Class 4 was completely ignored, with precision, recall, and F1-scores of zero, and Class 3 was barely detected.
+These shortcomings underscore the importance of addressing class imbalance in the training data. Without mitigation,
+the model remains biased toward majority classes, limiting its robustness and fairness, especially in real-world applications
+where accurate identi-fication of all classes is critical.
+To address this, we experimented with three resampling techniques, Random Oversampling, SMOTE, 
+and an augmented SMOTE variant, each designed to improve minority class performance through different mechanisms.
+
+
+\subsection{Random Oversampling method}
+
+Random Oversampling involves duplicating samples from minority classes to balance class distribution.
+In our case, we increased all class sizes to match the largest class (Class 5), which has 2,498 observations.
+The process is simple and fast, but may lead to overfitting due to repeated instances of the same samples.
+
+\begin{table}[!h]
+\centering
+\caption{Classification Report (Random Oversampling)}
+\label{tab:ro_imbalanced}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\textbf{Class} & \textbf{Precision} & \textbf{Recall} & \textbf{F1-score} & \textbf{Support} \\
+\hline
+1 & 0.71 & 0.84 & 0.77 & 612 \\
+2 & 0.48 & 0.39 & 0.43 & 183 \\
+3 & 0.16 & 0.04 & 0.06 & 113 \\
+4 & 0.00 & 0.00 & 0.00 & 8 \\
+5 & 0.78 & 0.80 & 0.79 & 625 \\
+\hline
+\textbf{Accuracy} & \multicolumn{2}{|c|}{--} & 0.71 & 1541 \\
+\hline
+\textbf{Macro Avg} & 0.43 & 0.41 & 0.41 & 1541 \\
+\textbf{Weighted Avg} & 0.67 & 0.71 & 0.68 & 1541 \\
+\hline
+\end{tabular}
+\end{table}
+
+Compared to the baseline, performance for Classes 2 and 3 showed modest improvement. 
+However, Class 4 remained undetected. While random oversampling helps mitigate class imbalance by increasing the representation 
+of minority classes, it simply duplicates existing samples. This can lead to overfitting, as the model may memorize repeated instances rather
+than learning generalizable patterns. As a result, its effectiveness in improving performance on severely underrepresented classes remains limited.
+
+\subsection{Synthetic Minority Oversampling Technique (SMOTE) method}
+
+Instead of applying a simple replication of the minority class instances,
+SMOTE generates synthetic minority class examples by interpolating between existing ones\\(Buda, Maki, \& Mazurowski, 2018).
+Specifically, it selects each minority class sample and creates new samples along the line segments joining it with
+its k nearest neighbors in feature space (He \& Garcia, 2009). Importantly, SMOTE does not analyze data distribution or
+underlying patterns. Instead, it focuses purely on distances in the feature space, generating synthetic observations 
+that lie between existing minority samples, regardless of the semantic meaning of those features.
+This makes SMOTE a general-purpose, application-agnostic technique for addressing class imbalance.
+Because SMOTE relies on the distance between observations, standardization is essential before applying SMOTE. 
+
+The simplified steps of SMOTE are as follows. First, for each sample in the minority class, find its k nearest neighbors. 
+Second, randomly choose one or more of those K neighbors. Third, create a new synthetic point between the original sample and the chosen neighbor using:
+
+Fourth, repeat this process until the minority class reaches the desired size.
+Compared to the baseline and random oversampling methods, SMOTE has shown noticeable improvements in some minority classes.
+Similar to the random oversampling method, we increased all class sizes to match the largest class (Class 5) with 2,498 observations.
+ We then applied the same baseline model to the oversampled dataset for comparison.”
+
+\[
+\text{new\_sample} = \text{original} + \lambda \cdot (\text{neighbor} - \text{original}), \quad \lambda \in (0, 1)
+\]
+
+\begin{table}[!h]
+\centering
+\caption{Classification Report (SMOTE)}
+\label{tab:smote_imbalanced}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\textbf{Class} & \textbf{Precision} & \textbf{Recall} & \textbf{F1-score} & \textbf{Support} \\
+\hline
+1 & 0.71 & 0.78 & 0.75 & 612 \\
+2 & 0.39 & 0.37 & 0.38 & 183 \\
+3 & 0.13 & 0.08 & 0.10 & 113 \\
+4 & 0.25 & 0.12 & 0.17 & 8 \\
+5 & 0.79 & 0.78 & 0.79 & 625 \\
+\hline
+\textbf{Accuracy} & \multicolumn{2}{|c|}{--} & 0.68 & 1541 \\
+\hline
+\textbf{Macro Avg} & 0.45 & 0.43 & 0.43 & 1541 \\
+\textbf{Weighted Avg} & 0.66 & 0.68 & 0.67 &  1651 \\
+\hline
+\end{tabular}
+\end{table}
+
+SMOTE improves minority class recall modestly but slightly reduces overall accuracy due to the introduction of synthetic samples. 
+Compared to random oversampling, it's better at distributing attention to minority classes, though results still suggest further tuning or advanced methods. 
+
+\subsection{Augmented SMOTE with PCA}
+
+The original class distribution was highly imbalanced, with the largest class containing 2,498 observations and the smallest minority 
+class (Class 4) only 33. Fully equalizing all classes to 2,498 observations would overly rely on synthetic data, potentially 
+reducing the credibility of the training set. To address this, we assigned custom target sizes to each class, to reduce the gap
+without forcing full balance. Random undersampling was applied to classes exceeding their target, while SMOTE was used to generate
+synthetic samples for underrepresented classes. If a class already met its target, all original observations were retained. 
+This flexible strategy allows for controlled class sizes while preserving the relative ranking of class frequencies, 
+resulting in a more realistic and robust dataset for downstream modeling. 
+However, traditional SMOTE performs poorly on high-dimensional data due to the sparsity of points and the reduced reliability of
+distance measures in such spaces. To address this, we incorporated a dimensionality reduction step using Principal Component Analysis (PCA)
+before neighbor selection. We identified nearest neighbors in the reduced-dimensional space and then mapped the interpolated synthetic
+samples back to the original feature space. This approach improves the quality and relevance of synthetic data by ensuring interpolation
+is performed in a more meaningful, lower-dimensional representation of the data.
+This flexible approach allows for per-class control over resampling and improves the quality of synthetic data in high-dimensional settings, 
+while preserving structure and minimizing overfitting risks.
+After tuning the key hyperparameters, including the PCA variance ratio, interpolation lambda range, and class-specific
+target sizes—we selected the following configuration: a PCA variance ratio of 90\%, 
+a lambda range of (0, 1) for interpolation, and target class sizes of [1: 1000, 2: 800, 3: 700, 4: 500, 5: 1000].
+This setup was chosen because it effectively preserves the variation in the original features, promotes class balance,
+and maintains the natural ranking of class frequencies. We believe this approach provides a balanced yet realistic
+representation of the data for downstream modeling.
+
+
+\begin{table}[!h]
+\centering
+\caption{Classification Report (Augmented SMOTE)}
+\label{tab:aug_smote_imbalanced}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\textbf{Class} & \textbf{Precision} & \textbf{Recall} & \textbf{F1-score} & \textbf{Support} \\
+\hline
+1 & 0.74 & 0.72 & 0.73 & 612 \\
+2 & 0.36 & 0.50 & 0.42 & 183 \\
+3 & 0.13 & 0.12 & 0.13 & 113 \\
+4 & 0.25 & 0.25 & 0.25 & 8 \\
+5 & 0.82 & 0.76 & 0.79 & 625 \\
+\hline
+\textbf{Accuracy} & \multicolumn{2}{|c|}{--} & 0.66 & 1541 samples\\
+\hline
+\textbf{Macro Avg} & 0.46 & 0.47 & 0.46 & 1541 \\
+\textbf{Weighted Avg} & 0.68 & 0.66 & 0.67 & 1541 \\
+\hline
+\end{tabular}
+\end{table}
+
+After applying the adjusted training data into the same random forest baseline model, We achieved a test accuracy of 66\%.
+The macro average F1-score improved to 0.46, indicating a better balance across all classes compared to baseline methods.
+Notably, performance for minority classes such as Class 2 (F1 = 0.42) and Class 3 (F1 = 0.13) showed modest gains, 
+while Class 4, despite its extremely low support, achieved precision and recall of 0.25, suggesting a more robust representation in the model.
+Although the overall accuracy is comparable to traditional methods, augmented provides more balanced learning, 
+helping the model recognize underrepresented classes while avoiding overfitting to synthetic examples.

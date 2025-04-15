@@ -1,13 +1,27 @@
 \documentclass[12pt]{article}
 \input{settings/packages.tex}
 \input{settings/mycommands.tex}
+\usepackage{xcolor}
+\usepackage{array}
+\usepackage[skip=2pt, labelfont=it, textfont=it, font=small]
+{caption}
+\usepackage{subcaption}
+\usepackage{graphicx} 
+\usepackage{amsmath}    % For advanced math formatting
+\usepackage{amssymb}    % For additional math symbols
+\usepackage{amsfonts}   % For math fonts like \mathbb
+
+
+
+\definecolor{myyellow}{RGB}{255, 255, 150}
+
+\newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
 
 \title{
 This is title
 }
 
 \author{Feng Gu(T00751197), author 2 and author 3}
-% \date{\today}
 
 \begin{document}
 \maketitle
@@ -17,37 +31,17 @@ This is title
     Here to attach abstract.
 \end{center}
 
-\section{Section 1}
-Start of this document.
+% \input{Introduction.tex}
+% \input{DataDescrip.tex}
+% \input{DataPrep.tex}
+% \input{FeatureProce2.tex}
+% \input{ModelFitting1.tex}
+\input{ModelFitting2.tex}
 
 
-\[
-E = mc^2
-\]
-
-\begin{figure}[!h]
-    \includegraphics[width=.9\textwidth]
-    {/Users/gufeng/2025_winter/DASC_5420/assignments/Assignment1/images/question_5_g.png}
-    \caption{A caption}
-    \label{default-label}
-\end{figure}
-
-\begin{table}[h!]
-\centering
-\begin{tabular}{|c|c|c|}
-\hline
-Column 1 & Column 2 & Column 3 \\
-\hline
-Data 1 & Data 2 & Data 3 \\
-Data 4 & Data 5 & Data 6 \\
-Data 7 & Data 8 & Data 9 \\
-\hline
-\end{tabular}
-\caption{Example Table}
-\label{example-table}
-\end{table}
 
 \clearpage
-\input{reference.tex}
+% \input{reference.tex}
+% \input{appendix.tex}
 
 \end{document}
