@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.1)  15 APR 2025 01:16
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.1)  15 APR 2025 18:25
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -381,24 +381,24 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 )) (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -453,7 +453,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
  (/Users/gufeng/Library/TinyTeX/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-Package hyperref Info: Link coloring OFF on input line 26.
+Package hyperref Info: Link coloring OFF on input line 30.
  (./main.out) (./main.out)
 \@outlinefile=\write3
 \openout3 = `main.out'.
@@ -461,75 +461,175 @@ Package hyperref Info: Link coloring OFF on input line 26.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: threeparttable package is loaded.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 28.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 32.
  (/Users/gufeng/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 28.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 32.
  (/Users/gufeng/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (./ModelFitting2.tex
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 16.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\beta' on input line 16.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 16.
-
-
-
 [1
 
 {/Users/gufeng/Library/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-
-[2]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 100.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\beta' on input line 100.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 100.
-
-
-
-[3]
-Overfull \hbox (8.00471pt too wide) in paragraph at lines 137--139
+Overfull \hbox (8.00471pt too wide) in paragraph at lines 46--48
 []\OT1/cmr/m/n/12 This design matrix allows the regression model to fit a flexible, piecewise polynomial
  []
 
-)
 
-[4] (./main.aux)
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 49.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\beta' on input line 49.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 49.
+
+
+
+[2]
+
+[3]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 127.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\beta' on input line 127.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 127.
+
+
+Overfull \hbox (10.12836pt too wide) in paragraph at lines 129--139
+\OT1/cmr/m/n/12 sampling with replacement from the observed dataset and estimate $[]$ for each bootstrap
+ []
+
+
+Overfull \hbox (5.45891pt too wide) in paragraph at lines 144--148
+[]\OT1/cmr/m/n/12 This bootstrap-based prior reflects the variability observed in the data and provides
+ []
+
+
+
+[4]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 200.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\beta' on input line 200.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 200.
+
+<../results/ModelFitting2/bootstrap_estimates_histograms.png, id=80, 1084.05pt x 433.62pt>
+File: ../results/ModelFitting2/bootstrap_estimates_histograms.png Graphic file (type png)
+<use ../results/ModelFitting2/bootstrap_estimates_histograms.png>
+Package pdftex.def Info: ../results/ModelFitting2/bootstrap_estimates_histograms.png  used on input line 211.
+(pdftex.def)             Requested size: 430.00462pt x 172.00253pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Overfull \hbox (13.11172pt too wide) in paragraph at lines 216--223
+[]\OT1/cmr/m/n/12 Figure []1[] [][][] shows the empirical prior distributions of the logistic regression coefficients
+ []
+
+
+
+[5]
+Overfull \hbox (12.18245pt too wide) in paragraph at lines 224--229
+\OT1/cmr/m/n/12 bootstrap samples, giving an approximation of the sampling distribution under repeated
+ []
+
+<../results/ModelFitting2/bayesian_posterior_density_histogram.png, id=92, 722.7pt x 433.62pt>
+File: ../results/ModelFitting2/bayesian_posterior_density_histogram.png Graphic file (type png)
+<use ../results/ModelFitting2/bayesian_posterior_density_histogram.png>
+Package pdftex.def Info: ../results/ModelFitting2/bayesian_posterior_density_histogram.png  used on input line 232.
+(pdftex.def)             Requested size: 387.00153pt x 232.19945pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Overfull \hbox (15.38103pt too wide) in paragraph at lines 239--244
+[]\OT1/cmr/m/n/12 The vertical dashed lines indicate the 10% and 100% quantile thresholds, highlighting
+ []
+
+
+
+[6 <../results/ModelFitting2/bootstrap_estimates_histograms.png>]
+Overfull \hbox (8.52693pt too wide) in paragraph at lines 279--284
+\OT1/cmr/m/n/12 Overall, both models exhibit consistent performance on class 1, achieving high accuracy
+ []
+
+
+
+[7 <../results/ModelFitting2/bayesian_posterior_density_histogram.png>]
+<../results/ModelFitting2/bayesian_coef_plot.png, id=114, 1300.86pt x 433.62pt>
+File: ../results/ModelFitting2/bayesian_coef_plot.png Graphic file (type png)
+<use ../results/ModelFitting2/bayesian_coef_plot.png>
+Package pdftex.def Info: ../results/ModelFitting2/bayesian_coef_plot.png  used on input line 337.
+(pdftex.def)             Requested size: 387.00153pt x 128.99527pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Overfull \hbox (3.36589pt too wide) in paragraph at lines 342--351
+[]\OT1/cmr/m/n/12 Figure []3[] illustrates the coefficients from five one-vs-rest Bayesian logistic regression
+ []
+
+
+
+[8]
+<../results/ModelFitting2/roc_curve_bayesian.png, id=121, 722.7pt x 433.62pt>
+File: ../results/ModelFitting2/roc_curve_bayesian.png Graphic file (type png)
+<use ../results/ModelFitting2/roc_curve_bayesian.png>
+Package pdftex.def Info: ../results/ModelFitting2/roc_curve_bayesian.png  used on input line 354.
+(pdftex.def)             Requested size: 387.00153pt x 232.19945pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+)
+Overfull \hbox (7.76872pt too wide) in paragraph at lines 359--44
+[]\OT1/cmr/m/n/12 Figure []4[] displays the ROC curves for the five one-vs-rest Bayesian logistic regression
+ []
+
+
+
+[9 <../results/ModelFitting2/bayesian_coef_plot.png>]
+
+[10 <../results/ModelFitting2/roc_curve_bayesian.png>] (./main.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 8B8390C4C0928C673599868ADA7FC261;1465.
+(rerunfilecheck)             Checksum: 4040D117F3C5FA616B1D3B4D0EEFB3B7;2154.
  ) 
 Here is how much of TeX's memory you used:
- 14216 strings out of 475172
- 230860 string characters out of 5765190
- 736358 words of memory out of 5000000
- 37005 multiletter control sequences out of 15000+600000
- 569203 words of font info for 76 fonts, out of 8000000 for 9000
+ 14309 strings out of 475172
+ 233522 string characters out of 5765190
+ 742900 words of memory out of 5000000
+ 37071 multiletter control sequences out of 15000+600000
+ 573836 words of font info for 92 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 84i,9n,96p,454b,474s stack positions out of 10000i,1000n,20000p,200000b,200000s
- </Users/gufeng/Library/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1200.600pk></Users/gufeng/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></Users/gufeng/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></Users/gufeng/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></Users/gufeng/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></Users/gufeng/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></Users/gufeng/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></Users/gufeng/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></Users/gufeng/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></Users/gufeng/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></Users/gufeng/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></Users/gufeng/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></Users/gufeng/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></Users/gufeng/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></Users/gufeng/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></Users/gufeng/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></Users/gufeng/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (4 pages, 180048 bytes).
+ 84i,10n,96p,454b,489s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</Users/gufeng/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></Users/gufeng/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></Users/gufeng/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></Users/gufeng/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></Users/gufeng/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></Users/gufeng/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></Users/gufeng/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></Users/gufeng/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></Users/gufeng/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></Users/gufeng/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb></Users/gufeng/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></Users/gufeng/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></Users/gufeng/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></Users/gufeng/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></Users/gufeng/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></Users/gufeng/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></Users/gufeng/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></Users/gufeng/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></Users/gufeng/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></Users/gufeng/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></Users/gufeng/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></Users/gufeng/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on main.pdf (10 pages, 870182 bytes).
 PDF statistics:
- 144 PDF objects out of 1000 (max. 8388607)
- 103 compressed objects within 2 object streams
- 15 named destinations out of 1000 (max. 500000)
- 41 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 236 PDF objects out of 1000 (max. 8388607)
+ 170 compressed objects within 2 object streams
+ 33 named destinations out of 1000 (max. 500000)
+ 85 words of extra memory for PDF output out of 10000 (max. 10000000)
 
